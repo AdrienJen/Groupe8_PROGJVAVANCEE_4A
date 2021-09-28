@@ -8,8 +8,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float speed = 5f;
-    [SerializeField]
-    private float speedrotate = 5f;
+    
     
     public Rigidbody2D rb;
     void Start()

@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 193920939}
   - component: {fileID: 193920943}
   - component: {fileID: 193920937}
-  - component: {fileID: 193920938}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -145,22 +144,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &193920937
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193920936}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 8e2667a0808b85d4dad59a4fcf6cfec3, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &193920938
+--- !u!95 &193920937
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -267,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354e9295230078f47bdcd16c0f232a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 193920938}
+  test: {fileID: 0}
 --- !u!1 &421209732
 GameObject:
   m_ObjectHideFlags: 0

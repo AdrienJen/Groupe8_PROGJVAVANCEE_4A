@@ -6,11 +6,11 @@ using UnityEngine;
 public class Anim : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animation test;
-    private GameObject p2;
+    public Animator test;
+   
     void Start()
     {
-        //test = GetComponent<Animator>();
+        test = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Anim : MonoBehaviour
     {
         if(Input.GetKeyDown("space"))
         {
-            test.Play();
+            test.Play("swingSword");
         }
     }
 
