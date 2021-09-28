@@ -13,10 +13,14 @@ public class RandomIA : MonoBehaviour
     private Rigidbody2D _rigidbody;
     [SerializeField]
     private int randomNumber;
+    
+    public Animator anim;
+    private GameObject p2;
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        p2=GameObject.FindGameObjectWithTag("Player2");
         InvokeRepeating("TakeRandomNumber",0f,2f);
     }
 
@@ -40,6 +44,14 @@ public class RandomIA : MonoBehaviour
                 _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             }
         }
+        if (randomNumber == 3)
+        {
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+            {
+                anim.Play("SwordAttack");
+            }
+            
+        }
     }
 
  
@@ -47,6 +59,6 @@ public class RandomIA : MonoBehaviour
     void TakeRandomNumber()
     {
      
-        randomNumber = Random.Range(0, 3);
+        randomNumber = Random.Range(0, 4);
     }
 }
