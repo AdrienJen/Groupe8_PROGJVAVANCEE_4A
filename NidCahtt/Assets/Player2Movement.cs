@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character2DMovement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
-
     [SerializeField]
     private float MovementSpeed = 1;
     
@@ -22,7 +21,7 @@ public class Character2DMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        var movement = Input.GetAxis("Horizontal");
+        var movement = Input.GetAxis("Horizontal2");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
         if (!Mathf.Approximately(0, movement))
@@ -30,7 +29,7 @@ public class Character2DMovement : MonoBehaviour
             transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
         }
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump2") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
