@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Anim : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public Animator test;
    
     void Start()
@@ -18,12 +18,15 @@ public class Anim : MonoBehaviour
     {
         if(Input.GetKeyDown("space"))
         {
-            test.Play("swingSword");
+            test.Play("swingSword");    
         }
+
+    
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         throw new NotImplementedException();
     }
+    
 }
