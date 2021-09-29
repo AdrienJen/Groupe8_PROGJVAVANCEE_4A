@@ -31,11 +31,18 @@ public class RandomIA : MonoBehaviour
         
         if (randomNumber == 0)
         {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * MovementSpeed;
+            int moveright=1;
+            transform.position += new Vector3(moveright, 0, 0) * Time.deltaTime * MovementSpeed;
+            transform.rotation = moveright < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
         }
         if (randomNumber == 1)
         {
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * MovementSpeed;
+            int moveleft=-1;
+            transform.position += new Vector3(moveleft, 0, 0) * Time.deltaTime * MovementSpeed;
+            if (!Mathf.Approximately(0, moveleft))
+            {
+                transform.rotation = moveleft < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+            }
         }
         if (randomNumber == 2)
         {
