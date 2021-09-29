@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AttackAnimation : MonoBehaviour
+public class p2AttackAnimation : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator test;
-    private GameObject p2;
+    private GameObject p1;
     
     void Start()
     {
         test = GetComponent<Animator>();
-        p2=GameObject.FindGameObjectWithTag("Player2");
+        p1=GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("p"))
+        if(Input.GetKeyDown("x"))
         {
             test.Play("SwordAttack");
         }
@@ -27,9 +26,9 @@ public class AttackAnimation : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Player2") && test.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+        if (coll.gameObject.CompareTag("Player") && test.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
         {
-            Destroy(p2);
+            Destroy(p1);
             Invoke("Die", 2);
         }
        
@@ -39,5 +38,4 @@ public class AttackAnimation : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    
 }
