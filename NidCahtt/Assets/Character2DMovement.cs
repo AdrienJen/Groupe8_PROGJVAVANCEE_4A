@@ -11,6 +11,8 @@ public class Character2DMovement : MonoBehaviour
     [SerializeField]
     private float JumpForce = 1;
 
+    [SerializeField] 
+    private GameObject sword;
     private Rigidbody2D _rigidbody;
     
     // Start is called before the first frame update
@@ -33,6 +35,10 @@ public class Character2DMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+        if(Input.GetKeyDown("p"))
+        {
+            sword.gameObject.GetComponent<p2AttackAnimation>().Attack();
         }
     }
 }

@@ -6,36 +6,41 @@ using UnityEngine.SceneManagement;
 public class p2AttackAnimation : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animator test;
+    private Animator anim;
+    [SerializeField]
     private GameObject p1;
+    [SerializeField]
+    private GameManager gm;
     
     void Start()
     {
-        test = GetComponent<Animator>();
-        p1=GameObject.FindGameObjectWithTag("Player");
+        anim =GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("x"))
-        {
-            test.Play("SwordAttack");
-        }
+    
     }
 
-    void OnTriggerStay2D(Collider2D coll)
+    public void Attack()
     {
-        if (coll.gameObject.CompareTag("Player") && test.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+        
+            anim.Play("SwordAttack");
+        
+    }
+    
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        Debug.Log("test");
+        if (coll.gameObject==p1 && anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
         {
-            Destroy(p1);
-            Invoke("Die", 2);
+            gm.GetComponent<GameManager>().P1Die();
         }
        
     }
-
-    void Die()
-    {
-        SceneManager.LoadScene(0);
-    }
+    
+    
+    
 }
