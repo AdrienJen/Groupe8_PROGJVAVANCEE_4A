@@ -19,12 +19,13 @@ public class Player2Movement : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        transform.rotation = -1 < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        var movement = Input.GetAxis("Horizontal2");
+        var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
         if (!Mathf.Approximately(0, movement))
@@ -32,11 +33,11 @@ public class Player2Movement : MonoBehaviour
             transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
         }
 
-        if (Input.GetButtonDown("Jump2") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
-        if(Input.GetKeyDown("x"))
+        if(Input.GetKeyDown("p"))
         {
             sword.gameObject.GetComponent<p2AttackAnimation>().Attack();
         }
