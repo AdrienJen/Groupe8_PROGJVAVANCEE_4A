@@ -524,11 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 4
   JumpForce: 9
-<<<<<<< HEAD
-  sword: {fileID: 0}
-=======
   sword: {fileID: 351191631}
->>>>>>> 07b5051d61406a65c2338ed51a86a6556d734851
 --- !u!114 &747702960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,11 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 4
   JumpForce: 9
-<<<<<<< HEAD
-  sword: {fileID: 0}
-=======
   sword: {fileID: 1013458797}
->>>>>>> 07b5051d61406a65c2338ed51a86a6556d734851
 --- !u!50 &1012451835
 Rigidbody2D:
   serializedVersion: 4
@@ -950,10 +942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7562500c822af1241b4ffb70add7cc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  p2: {fileID: 0}
-  gm: {fileID: 0}
-=======
   p2: {fileID: 747702954}
   gm: {fileID: 1196694965}
 --- !u!50 &1013458803
@@ -991,7 +979,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1013458803}
->>>>>>> 07b5051d61406a65c2338ed51a86a6556d734851
 --- !u!1 &1196694964
 GameObject:
   m_ObjectHideFlags: 0
