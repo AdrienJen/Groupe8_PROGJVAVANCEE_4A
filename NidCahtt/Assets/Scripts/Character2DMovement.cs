@@ -11,14 +11,18 @@ public class Character2DMovement : MonoBehaviour
     [SerializeField]
     private float JumpForce = 1;
 
+    //[SerializeField] 
+    //private GameObject sword;
+
     [SerializeField] 
-    private GameObject sword;
+    private Animator anim;
     private Rigidbody2D _rigidbody;
     
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,11 +42,13 @@ public class Character2DMovement : MonoBehaviour
         }
         if(Input.GetKeyDown("e"))
         {
-            sword.gameObject.GetComponent<AttackAnimation>().Attack();
+            anim.Play("SlashAnimation");
         }
-        if(Input.GetKeyDown("a"))
+        
+        /*if(Input.GetKeyDown("a"))
         {
             sword.gameObject.GetComponent<Bullet>().Throw();
         }
+        */
     }
 }

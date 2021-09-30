@@ -6,16 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class AttackAnimation : MonoBehaviour
 {
-    private Animator anim;
+    
     [SerializeField]
     private GameObject p2;
     [SerializeField]
     private GameManager gm;
     
+    [SerializeField] 
+    private Animator player1Anim;
     void Start()
     {
-        anim = GetComponent<Animator>();
-   
+       
+
     }
 
     // Update is called once per frame
@@ -23,24 +25,16 @@ public class AttackAnimation : MonoBehaviour
     {
         //if(Input.GetKeyDown("p"))
         
-            
+    
         
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject==p2 && anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+        if (coll.gameObject==p2 && player1Anim.GetCurrentAnimatorStateInfo(0).IsName("SlashAnimation"))
         {
             gm.GetComponent<GameManager>().P2Die();
         }
        
-    }
-    
-    
-    public void Attack()
-    {
-        
-        anim.Play("SwordAttack");
-        
     }
 }
