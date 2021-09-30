@@ -33,7 +33,7 @@ public class p2AttackAnimation : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("test");
+        
         if (coll.gameObject==p1 && anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
         {
             gm.GetComponent<GameManager>().P1Die();
