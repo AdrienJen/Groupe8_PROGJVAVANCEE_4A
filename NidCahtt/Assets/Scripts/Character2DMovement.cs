@@ -38,7 +38,11 @@ public class Character2DMovement : MonoBehaviour
         }
         if(Input.GetKeyDown("p"))
         {
-            sword.gameObject.GetComponent<p2AttackAnimation>().Attack();
+            sword.gameObject.GetComponent<AttackAnimation>().Attack();
+        }
+        if(Input.GetKeyDown("a"))
+        {
+            sword.gameObject.GetComponent<Bullet>().Throw();
         }
     }
 }
