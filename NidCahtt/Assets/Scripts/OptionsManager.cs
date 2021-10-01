@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 public class OptionsManager : MonoBehaviour
 {
 
+    // Script pour gérer le menu des options
+    
     public AudioMixer audioMixer;
 
     public Dropdown resolutionDropdown;
@@ -29,7 +31,7 @@ public class OptionsManager : MonoBehaviour
             options.Add(option);
 
             if (resolutions[i].width == Screen.currentResolution.width && 
-                resolutions[i].height == Screen.currentResolution.height)
+                resolutions[i].height == Screen.currentResolution.height) // Gestion de la résolution en fonction de la hauteur et de la longueur
             {
                 currentResolutionIndex = i;
             }
@@ -40,23 +42,23 @@ public class OptionsManager : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetResolution(int resolutionIndex)
+    public void SetResolution(int resolutionIndex) // Fonction pour gérer le choix de la résolution d'écran
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
     
-    public void SetVolume(float volume)
+    public void SetVolume(float volume) // Fonction pour gérer le volume général du jeu
     {
         audioMixer.SetFloat("volume", volume);
     }
 
-    public void SetQuality(int qualityIndex)
+    public void SetQuality(int qualityIndex) // Fonction pour gérer la qualité d'image du jeu
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetFullScreen(bool isFullScreen)
+    public void SetFullScreen(bool isFullScreen) // Fonction pour gérer le plein écran dur le jeu
     {
         Screen.fullScreen = isFullScreen;
     }

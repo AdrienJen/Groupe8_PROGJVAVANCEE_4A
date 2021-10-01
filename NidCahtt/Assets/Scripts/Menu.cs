@@ -5,29 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Script pour gérer les boutons du menu
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
 
-    public void Play()
+    public void Play() //Fonction pour lancer une partie en 1v1
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("1 vs 1");
     }
 
-    public void PlayAI()
+    public void PlayAI() //Fonction pour lancer une partie en 1vIA
     {
         SceneManager.LoadScene("vs ai");
     }
 
-    public void Quit()
+    public void Quit() //Fonction pour fermer le jeu
     {
         Application.Quit();
     }

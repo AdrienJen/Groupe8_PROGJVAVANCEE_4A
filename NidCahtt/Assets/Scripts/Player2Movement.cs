@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player2Movement : MonoBehaviour
 {
+    
+    // Script qui réplique le script "Character2DMovement" pour le joueur 2
+    
     [SerializeField]
     private float MovementSpeed = 1;
     
