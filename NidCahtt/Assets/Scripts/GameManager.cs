@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void P2Die()
     {
-        Debug.Log("test");
+       
         Destroy(player2);
         Invoke("Reset",1);
     }

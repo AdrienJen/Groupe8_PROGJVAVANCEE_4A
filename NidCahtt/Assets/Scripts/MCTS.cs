@@ -6,7 +6,7 @@ using Random = System.Random;
 
 public class MCTS
 {
-    
+    // ------ Variables ----------
     public List<String> MovesList;
     private int boardMinX = -15;
     private int boardMaxX = 15;
@@ -25,17 +25,15 @@ public class MCTS
     int BestWin = 0;
     private int testWin = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
+// ------ Functions ----------
+    /// <summary>
+    /// Choose the best play to beat the player
+    /// </summary>
     void ComputeMCTS()
     {
         int max = 20;
         for(actualMove=1;actualMove<=numberOfMove;actualMove++)
-        {
+        {// do the first move then will do 19 random moves
             FirstMove();
             testWin = 0;
             for (int x = 1; x <= 20; x++)
@@ -51,16 +49,19 @@ public class MCTS
 
             }
             
-            
+            //will take the best move
         }
       
 
     }
-
+    /// <summary>
+    /// Do a move depending on the number of (int)actualMove.
+    /// </summary>
     void FirstMove()
     {
         if (actualMove == 1)
         {
+            //move to the left
             string actualMove = "moveLeft";
             p2MCTSPosX -= 2;
             p2MCTSPosWeaponX = p2MCTSPosX -1;
@@ -73,6 +74,7 @@ public class MCTS
                 
         if (actualMove == 2)
         {
+            //move to the right
             string actualMove = "moveRight";
             p2MCTSPosX += 2;
             p2MCTSPosWeaponX = p2MCTSPosX +1;
@@ -84,6 +86,7 @@ public class MCTS
         }
         if (actualMove == 3)
         {
+            //make him jump
             string actualMove = "Jump";
             //Après 1 seconde augmente p2MCTSPosY de 4
             //while p2MCTSPosY <  p2MCTSPosY+4  ;
