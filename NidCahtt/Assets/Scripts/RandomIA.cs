@@ -15,12 +15,11 @@ public class RandomIA : MonoBehaviour
     private int randomNumber;
     
     public Animator anim;
-    private GameObject p2;
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        p2=GameObject.FindGameObjectWithTag("Player2");
+       
         InvokeRepeating("TakeRandomNumber",0f,2f);
     }
 
@@ -53,9 +52,9 @@ public class RandomIA : MonoBehaviour
         }
         if (randomNumber == 3)
         {
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("SlashAnimation"))
             {
-                anim.Play("SwordAttack");
+                anim.Play("SlashAnimation");
             }
             
         }

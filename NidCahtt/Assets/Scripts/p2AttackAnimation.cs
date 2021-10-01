@@ -11,6 +11,8 @@ public class p2AttackAnimation : MonoBehaviour
     private GameObject p1;
     [SerializeField]
     private GameManager gm;
+
+    [SerializeField] private Animator player2Anim;
     
     void Start()
     {
@@ -24,17 +26,10 @@ public class p2AttackAnimation : MonoBehaviour
     
     }
 
-    public void Attack()
-    {
-        
-            anim.Play("SwordAttack");
-        
-    }
-    
     void OnTriggerEnter2D(Collider2D coll)
     {
         
-        if (coll.gameObject==p1 && anim.GetCurrentAnimatorStateInfo(0).IsName("SwordAttack"))
+        if (coll.gameObject==p1 && player2Anim.GetCurrentAnimatorStateInfo(0).IsName("SlashAnimation"))
         {
             gm.GetComponent<GameManager>().P1Die();
         }

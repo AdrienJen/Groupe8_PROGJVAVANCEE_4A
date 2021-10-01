@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;    
 
 public class Menu : MonoBehaviour
 {
@@ -19,7 +19,12 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Test");
+    }
+
+    public void PlayAI()
+    {
+        SceneManager.LoadScene("vs ai");
     }
 
     public void Quit()

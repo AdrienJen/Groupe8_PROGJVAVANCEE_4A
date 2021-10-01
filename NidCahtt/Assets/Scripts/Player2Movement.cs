@@ -10,8 +10,10 @@ public class Player2Movement : MonoBehaviour
     [SerializeField]
     private float JumpForce = 1;
 
-    [SerializeField] private GameObject sword;
+    //[SerializeField] private GameObject sword;
 
+    [SerializeField] 
+    private Animator anim;
     private Rigidbody2D _rigidbody;
     
     
@@ -19,6 +21,7 @@ public class Player2Movement : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         transform.rotation = -1 < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
     }
 
@@ -39,7 +42,7 @@ public class Player2Movement : MonoBehaviour
         }
         if(Input.GetKeyDown("p"))
         {
-            sword.gameObject.GetComponent<p2AttackAnimation>().Attack();
+            anim.Play("SlashAnimation");
         }
     }
 }

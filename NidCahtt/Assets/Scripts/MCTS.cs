@@ -46,7 +46,7 @@ public class MCTS
                 while (timerLeft>0)
                 {
                     
-                    Move();
+                    //Move();
                 }
 
             }
@@ -106,7 +106,7 @@ public class MCTS
     
     void RandomMove()
     {
-        int randomNumber = Random.Range(0, 4);
+        /*int randomNumber = Random.Range(0, 4);
         if (randomNumber == 1)
         {
             string actualMove = "moveLeft";
@@ -156,7 +156,7 @@ public class MCTS
             }
         }
         //ienumarator
-        
+        */
 
     }
     
