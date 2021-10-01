@@ -4,29 +4,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    
+    // ------ Variables ----------
+   
     [SerializeField]
     private GameObject player1;
 
     [SerializeField]
     private GameObject player2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // ------ Functions ----------
+    /// <summary>
+    /// Calls the methods Reset if player 1 die.
+    /// </summary>
     public void P1Die()
     {
         Destroy(player1);
         Invoke("Reset",1);
     }
 
+    /// <summary>
+    /// Calls the methods Reset if player 2 die.
+    /// </summary>
     public void P2Die()
     {
         Debug.Log("test");
@@ -34,6 +33,9 @@ public class GameManager : MonoBehaviour
         Invoke("Reset",1);
     }
 
+    /// <summary>
+    /// Load the scene Menu.
+    /// </summary>
     void Reset()
     {
         SceneManager.LoadScene("Menu");

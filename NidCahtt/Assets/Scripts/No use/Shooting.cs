@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    // ------ Variables ----------
     [SerializeField]
     private Transform shootingPoint;
 
@@ -11,11 +12,7 @@ public class Shooting : MonoBehaviour
     private GameObject projectile;
     
     
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
+// ------ Functions ----------
 
     // Update is called once per frame
     void Update()

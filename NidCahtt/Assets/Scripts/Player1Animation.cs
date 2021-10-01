@@ -4,9 +4,9 @@ using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AttackAnimation : MonoBehaviour
+public class Player1Animation : MonoBehaviour
 {
-    
+    // ------ Variables ----------
     [SerializeField]
     private GameObject p2;
     [SerializeField]
@@ -14,21 +14,9 @@ public class AttackAnimation : MonoBehaviour
     
     [SerializeField] 
     private Animator player1Anim;
-    void Start()
-    {
-       
+// ------ Functions ----------
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if(Input.GetKeyDown("p"))
-        
-    
-        
-    }
-
+//Calls the methods P2Die, if on trigger enter during the animation and with the collider of player 2.
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject==p2 && player1Anim.GetCurrentAnimatorStateInfo(0).IsName("SlashAnimation"))

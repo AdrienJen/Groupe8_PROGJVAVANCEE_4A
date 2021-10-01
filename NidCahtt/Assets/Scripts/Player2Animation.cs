@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class p2AttackAnimation : MonoBehaviour
+public class Player2Animation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Animator anim;
+  
+    // ------ Variables ----------
     [SerializeField]
     private GameObject p1;
     [SerializeField]
@@ -14,18 +14,9 @@ public class p2AttackAnimation : MonoBehaviour
 
     [SerializeField] private Animator player2Anim;
     
-    void Start()
-    {
-        anim =GetComponent<Animator>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+    // ------ Functions ----------
     
-    }
-
+    //Calls the methods P1Die, if on trigger enter during the animation and with the collider of player 1.
     void OnTriggerEnter2D(Collider2D coll)
     {
         
